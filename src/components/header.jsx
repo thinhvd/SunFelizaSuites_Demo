@@ -1,29 +1,55 @@
-import React from "react";
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Autoplay } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 export const Header = (props) => {
   return (
-    <header id="header">
-      <div className="intro">
-        <div className="overlay">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8 col-md-offset-2 intro-text">
-                <h1>
-                  {props.data ? props.data.title : "Loading"}
-                  <span></span>
-                </h1>
-                <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a
-                  href="#about"
-                  className="btn btn-custom btn-lg page-scroll"
-                >
-                  Tìm hiểu thêm
-                </a>{" "}
-              </div>
-            </div>
+    <>
+      <Swiper
+        effect={'fade'}
+        navigation={false}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectFade, Autoplay]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="swiper-slide-div">
+            <img className='swiper-slide-img-pattern'  src={"https://sunfelizasuites.com.vn/wp-content/themes/sunfeliza-1/static/src/images/pattern-2.png"} />
+            <img className="swiper-slide-main-img" src={"https://sunfelizasuites.com.vn/wp-content/uploads/2025/07/Home-2.png"} />
           </div>
-        </div>
-      </div>
-    </header>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-slide-div">
+            <img className='swiper-slide-img-pattern'  src={"https://sunfelizasuites.com.vn/wp-content/themes/sunfeliza-1/static/src/images/pattern-2.png"} />
+            <img className="swiper-slide-main-img" src={"https://swiperjs.com/demos/images/nature-2.jpg"} />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-slide-div">
+            <img className='swiper-slide-img-pattern'  src={"https://sunfelizasuites.com.vn/wp-content/themes/sunfeliza-1/static/src/images/pattern-2.png"} />
+            <img className="swiper-slide-main-img" src={"https://swiperjs.com/demos/images/nature-3.jpg"} />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="swiper-slide-div">
+            <img className='swiper-slide-img-pattern'  src={"https://sunfelizasuites.com.vn/wp-content/themes/sunfeliza-1/static/src/images/pattern-2.png"} />
+            <img className="swiper-slide-main-img" src={"https://swiperjs.com/demos/images/nature-4.jpg"} />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 };
