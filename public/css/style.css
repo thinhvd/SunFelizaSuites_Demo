@@ -76,7 +76,7 @@ hr {
   transition: all 0.8s;
 }
 #menu.navbar-default {
-  background-color: #D69828;
+  background-color: #fff;
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
@@ -243,46 +243,6 @@ header .intro-text {
   padding-top: 350px;
   padding-bottom: 200px;
   text-align: center;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-}
-
-.swiper-slide-div{
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide-img-pattern{
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 60vw !important;
-  height: 100%;
-}
-
-.swiper-slide-main-img{
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide-div{
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 /* Features Section */
