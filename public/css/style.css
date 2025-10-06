@@ -8,6 +8,13 @@ html {
   width: 100% !important;
   height: 100% !important;
 }
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/intro-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 h2,
 h3,
 h4 {
@@ -76,7 +83,7 @@ hr {
   transition: all 0.8s;
 }
 #menu.navbar-default {
-  background-color: #fff;
+  background-color: #D69828;
   border-color: rgba(231, 231, 231, 0);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
@@ -216,11 +223,11 @@ a:focus,
   -o-background-size: cover;
 }
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.35));
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
-  color: #fff;
+  color: #FFF3E0;
   font-size: 82px;
   font-weight: 700;
   text-transform: uppercase;
@@ -229,10 +236,10 @@ a:focus,
 }
 .intro h1 span {
   font-weight: 800;
-  color: #5ca9fb;
+  color: #D69828;
 }
 .intro p {
-  color: #fff;
+  color: #FFE6C7;
   font-size: 22px;
   font-weight: 300;
   line-height: 30px;
@@ -263,7 +270,15 @@ header .intro-text {
 }
 /* About Section */
 #about, #about2, #about3, #about4, #about5, #about6, #about7 {
-  padding: 100px 0;
+  padding: 50px 0;
+}
+#about, #about3, #about5, #about7 {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: saturate(140%) blur(2px);
+}
+#about2, #about4, #about6 {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(140%) blur(2px);
 }
 #about h3, #about2 h3, #about3 h3, #about4 h3, #about5 h3, #about6 h3, #about7 h3 {
   font-size: 22px;
@@ -298,15 +313,45 @@ header .intro-text {
   padding-right: 8px;
 }
 #about img, #about2 img, #about3 img, #about4 img, #about5 img, #about6 img, #about7 img {
-  width: 520px;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 520px;
   background: #fff;
   border-right: 0;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+#about img:hover, #about2 img:hover, #about3 img:hover, #about4 img:hover, #about5 img:hover, #about6 img:hover, #about7 img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 48px rgba(0, 0, 0, 0.12);
 }
 #about p, #about2 p, #about3 p, #about4 p, #about5 p, #about6 p, #about7 p {
   line-height: 24px;
   margin: 30px 0;
+}
+.about-text {
+  background: rgba(255, 249, 240, 0.92);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+.about-text h2 {
+  margin-top: 0;
+}
+.about-text p {
+  color: #555;
+}
+.list-style ul {
+  margin-top: 8px;
+}
+#about .about-text li, #about2 .about-text li, #about3 .about-text li, #about4 .about-text li, #about5 .about-text li, #about6 .about-text li, #about7 .about-text li {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(99, 114, 255, 0.08);
+}
+#about .about-text li:before, #about2 .about-text li:before, #about3 .about-text li:before, #about4 .about-text li:before, #about5 .about-text li:before, #about6 .about-text li:before, #about7 .about-text li:before {
+  margin-right: 6px;
 }
 /* Services Section */
 #services {
@@ -603,5 +648,9 @@ label {
 @media (max-width: 768px) {
   #about img {
     margin: 50px 0;
+  }
+  .about-text {
+    margin-top: 20px;
+    padding: 20px;
   }
 }

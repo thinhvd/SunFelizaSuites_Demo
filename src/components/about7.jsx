@@ -14,7 +14,7 @@ export const About7 = (props) => {
               <h2>CÁC LOẠI HÌNH SẢN PHẨM SUN FELIZA SUITES</h2>
               <p>{props.data ? props.data.paragraph : "loading..."}</p>
               {/* <h3>Why Choose Us?</h3> */}
-              <div className="list-style">
+              {/* <div className="list-style">
                 <div className="col-lg-6 col-sm-6 col-xs-12">
                   <ul>
                     {props.data
@@ -33,7 +33,7 @@ export const About7 = (props) => {
                       : "loading"}
                   </ul>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
