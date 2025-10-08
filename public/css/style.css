@@ -91,18 +91,22 @@ hr {
   font-family: "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: #333;
+  color: #fff;
   text-transform: uppercase;
 }
 #menu.navbar-default .navbar-nav > li > a {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
-  color: #555;
+  color: #fff;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 700;
   padding: 8px 2px;
   border-radius: 0;
   margin: 9px 20px 0;
+}
+#menu.navbar-default .navbar-nav > li > a:hover,
+#menu.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
 }
 #menu.navbar-default .navbar-nav > li > a:after {
   display: block;
@@ -122,6 +126,11 @@ hr {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
 }
 .navbar-default .navbar-nav > .active > a:after,
 .navbar-default .navbar-nav > .active > a:hover:after,
@@ -396,6 +405,10 @@ header .intro-text {
 #services .service-desc {
   margin-bottom: 40px;
 }
+#services .service-desc p {
+  font-size: 18px;
+  line-height: 28px;
+}
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
@@ -419,22 +432,26 @@ header .intro-text {
     rgba(99, 114, 255, 0.8) 0%,
     rgba(92, 169, 251, 0.8) 100%
   );
-  padding: 30% 0 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   opacity: 0;
   transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hover-bg .hover-text > h4 {
   opacity: 0;
   color: #fff;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
   transition: all 0.3s;
   font-size: 18px;
   letter-spacing: 1px;
   font-weight: 500;
   text-transform: uppercase;
+  margin: 0;
 }
 .hover-bg:hover .hover-text > h4 {
   opacity: 1;

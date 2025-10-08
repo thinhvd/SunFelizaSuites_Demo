@@ -25,7 +25,7 @@ export const About6 = (props) => {
           </div>
           <div className="col-xs-12 col-md-6">
             {" "}
-            <img src="img/about.jpg" className="img-responsive" alt="" />{" "}
+            <img src="img/1.-Sanh-thap-Khang-1.jpg" className="img-responsive" alt="" />{" "}
           </div>
         </div>
       </div>
