@@ -22,3 +22,262 @@
     width: 110%;
   }
 }
+
+/* Floating signup widget */
+.floating-signup {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  font-family: "Open Sans", sans-serif;
+}
+
+.floating-signup__toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #902D10, #B71C1C);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(144, 45, 16, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-signup__toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(144, 45, 16, 0.5);
+}
+
+.floating-signup__toggle:active {
+  transform: translateY(0);
+}
+
+/* Animation cho icon hòm thư */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 20px rgba(144, 45, 16, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 20px rgba(144, 45, 16, 0.6), 0 0 0 10px rgba(144, 45, 16, 0.1);
+  }
+  100% {
+    box-shadow: 0 8px 20px rgba(144, 45, 16, 0.4);
+  }
+}
+
+.floating-signup__toggle.animate {
+  animation: bounce 2s infinite, pulse 3s infinite;
+}
+
+/* Hiệu ứng sóng khi click */
+.floating-signup__toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.floating-signup__toggle:active::before {
+  width: 100px;
+  height: 100px;
+}
+
+.floating-signup__panel {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.07);
+  padding: 20px;
+  display: none;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(144, 45, 16, 0.1);
+}
+
+/* Open/close handled by body class to avoid local state complexity */
+body.floating-signup--open .floating-signup__panel {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.floating-signup__header {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.floating-signup__header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #902D10, #B71C1C);
+  border-radius: 1px;
+}
+
+.floating-signup__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin: 12px 0 6px;
+}
+
+.floating-signup__input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.floating-signup__input:focus {
+  border-color: #902D10;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(144, 45, 16, 0.1);
+  transform: translateY(-1px);
+}
+
+.floating-signup__input::placeholder {
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.floating-signup__submit {
+  width: 100%;
+  margin-top: 200px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #902D10, #B71C1C);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 48px; /* Đảm bảo chiều cao cố định */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-signup__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(144, 45, 16, 0.3);
+}
+
+.floating-signup__submit:active {
+  transform: translateY(0);
+}
+
+.floating-signup__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  /* Giữ nguyên tất cả thuộc tính từ .floating-signup__submit */
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button success - giữ nguyên màu nền */
+.floating-signup__submit--success {
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+/* Loading spinner - chỉ hiện khi loading */
+.floating-signup__submit:disabled:not(.floating-signup__submit--success)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.floating-signup__message {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.floating-signup__message--success {
+  color: #902D10;
+  background: rgba(144, 45, 16, 0.1);
+  border: 1px solid rgba(144, 45, 16, 0.2);
+}
+
+.floating-signup__message--error {
+  color: #b71c1c;
+  background: rgba(183, 28, 28, 0.1);
+  border: 1px solid rgba(183, 28, 28, 0.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  .floating-signup__panel {
+    right: -10px;
+    width: calc(100vw - 20px);
+    max-width: 300px;
+  }
+  
+  .floating-signup__toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}

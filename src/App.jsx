@@ -17,6 +17,7 @@ import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
+import { FloatingSignup } from "./components/FloatingSignup";
 //test
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -47,6 +48,7 @@ const App = () => {
       {/* <Testimonials data={landingPageData.Testimonials} />
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} /> */}
+      <FloatingSignup />
     </div>
   );
 };
